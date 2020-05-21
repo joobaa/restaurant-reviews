@@ -16,4 +16,23 @@
 </p>
 
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
-<%= link_to 'Back', restaurants_path %>
+<%= link_to 'Back', restaurants_path %> | 
+<%= link_to 'Write a review', new_restaurant_review_path(@restaurant)  %>
+
+<h2>Reviews</h2>
+
+<ul>
+  <% @restaurant.reviews.each do |review| %>
+    <li><%= review.content %> (<%= link_to "🗑 delete", review_path(review), method: :delete %>)</li>
+  <% end %>
+</ul>
+
+
+
+
+
+
+
+
+
+
